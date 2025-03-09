@@ -40,10 +40,10 @@ Execute any of the following commands from the root of the repository.
 Building `SDL_Shadercross` on Windows is a pain. Instead, to use prebuilt libraries:
 
 1. Run `.\setup.ps1`, which will generate the libraries needed to build and run the above example. This may fail (that's fine, we want some of the artifacts). If it fails, do the following to use pre-built libraries:
-  1. Navigate to the `SDL_Shadercross` [GitHub Actions](https://github.com/libsdl-org/SDL_shadercross/actions) and download the prebuilt Windows VS artifact (not MSVC) from the latest release's commit. 
-     1. From the `bin` folder: place `shadercross.exe` in the `bins/windows` folder. Place everything else in the root directory. These DLLs will need to be distributed with the project.
-     1. From the `lib` folder: place `SDL3_shadercross.lib` and `SDL3_shadercross-static.lib` in `bindings/sdl_shadercross/libs/windows/`. There also needs to be a compatible `spirv-cross-c-shared.lib` in there. 
-  1. `SDL_Shadercross` is built to target a specific SDL3 release. You must use the SDL3 DLL from the artifacts, and you need a compatible `SDL3.lib` for it. Odin now ships with SDL3 - if it's compatible, you can just pull the lib from Odin `.../Odin/vendor/sdl3/SDL3.lib`. If not, you'll need to build the same version of SDL3 that SDL_Shadercross was compiled for, and pull over `SDL3.lib` (x64). Place it in `bindings/sdl3/libs/windows/`.
+    1. Navigate to the `SDL_Shadercross` [GitHub Actions](https://github.com/libsdl-org/SDL_shadercross/actions) and download the prebuilt Windows VS artifact (not MSVC) from the latest release's commit. 
+        1. From the `bin` folder: place `shadercross.exe` in the `bins/windows` folder. Place everything else in the root directory. These DLLs will need to be distributed with the project.
+        1. From the `lib` folder: place `SDL3_shadercross.lib` and `SDL3_shadercross-static.lib` in `bindings/sdl_shadercross/libs/windows/`. There also needs to be a compatible `spirv-cross-c-shared.lib` in there. 
+    1. `SDL_Shadercross` is built to target a specific SDL3 release. You must use the SDL3 DLL from the artifacts, and you need a compatible `SDL3.lib` for it. Odin now ships with SDL3 - if it's compatible, you can just pull the lib from Odin `.../Odin/vendor/sdl3/SDL3.lib`. If not, you'll need to build the same version of SDL3 that SDL_Shadercross was compiled for, and pull over `SDL3.lib` (x64). Place it in `bindings/sdl3/libs/windows/`.
 1. Build with `.\build_debug.ps1` or `.\build_release.ps1`
 1. Run `.\game_debug.exe` or `.\game_release.exe`
 1. While running `.\game_debug.exe`, press `R` to recompile the shaders.
