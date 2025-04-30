@@ -48,6 +48,12 @@ Building `SDL_Shadercross` on Windows is a pain. Instead, to use prebuilt librar
 1. Run `.\game_debug.exe` or `.\game_release.exe`
 1. While running `.\game_debug.exe`, press `R` to recompile the shaders.
 
+## Usage
+
+To use the bindings, your project needs access to the `sdl_shadercross` bindings in the `bindings` folder and your build needs to contain the relevant dynamic libraries and executables from the `bins` folder - easiest is to just copy the bins into your build, properly setting DLL paths, etc. 
+
+Note that unless `SDL_Shadercross` was built with the exact same version of SDL3 that Odin's native bindings use, you will need to use the SDL3 bindings in this project, *not* Odin's native bindings, because Shadercross is dependent on the SDL3 DLL.
+
 ## Credits
 
 Certain parts of the example were taken from [Karl Zylinski's hot reload template](https://github.com/karl-zylinski/odin-raylib-hot-reload-game-template). For example, setting up the context's tracking allocator and logger, and checking for bad frees and leaks.
