@@ -1,6 +1,9 @@
 compiled/
 bins/
 libs/
+bindings/Debug/
+bindings/Release/
+build_game/
 *.bin
 *.exe
 *.pdb

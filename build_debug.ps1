@@ -1,6 +1,8 @@
 $PROJECT_DIR = Get-Location
-$OUT_DIR = $PROJECT_DIR
+$OUT_DIR = "$PROJECT_DIR/build_game/Debug"
 $OUT_EXE = "game_debug.exe"
+
+New-Item -ItemType Directory -Path "$OUT_DIR"
 
 odin build ./src `
      -debug `

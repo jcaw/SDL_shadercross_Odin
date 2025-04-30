@@ -1,4 +1,4 @@
-$SHADERCROSS = "./bins/windows/shadercross.exe"
+$SHADERCROSS = "./bins/windows/Release/shadercross.exe"
 
 Remove-Item -Recurse -Force "../compiled" -ErrorAction SilentlyContinue
 New-Item -ItemType Directory -Path "../compiled/SPIRV", "../compiled/MSL", "../compiled/DXIL" -Force
