@@ -105,7 +105,11 @@ if ($d) {
 
 # TODO: Copy include headers?
 $ODIN_FILES_BASE_DIR = (Join-Path (Join-Path $PROJECT_DIR "bindings") "Odin")
-Copy-Item -Force -Recurse -Path (Join-Path $ODIN_FILES_BASE_DIR "sdl3/*")            -Destination (Join-Path $PROJECT_DIR "bindings/$BUILD_MODE/sdl3/")
-Copy-Item -Force -Recurse -Path (Join-Path $ODIN_FILES_BASE_DIR "sdl_shadercross/*") -Destination (Join-Path $PROJECT_DIR "bindings/$BUILD_MODE/sdl_shadercross/")
+$SDL_BINDINGS_DIR = (Join-Path $PROJECT_DIR "bindings/$BUILD_MODE/sdl3/")
+$SDL_SHADERCROSS_BINDINGS_DIR = (Join-Path $PROJECT_DIR "bindings/$BUILD_MODE/sdl_shadercross/")
+Copy-Item -Force -Recurse -Path (Join-Path $ODIN_FILES_BASE_DIR "sdl3/*")                   -Destination "$SDL_BINDINGS_DIR"
+Copy-Item -Force -Recurse -Path (Join-Path $SDL_DIR "include/SDL3")                         -Destination (Join-Path "$SDL_BINDINGS_DIR" "include")
+Copy-Item -Force -Recurse -Path (Join-Path $ODIN_FILES_BASE_DIR "sdl_shadercross/*")        -Destination "$SDL_SHADERCROSS_BINDINGS_DIR"
+Copy-Item -Force -Recurse -Path (Join-Path $SDL_SHADERCROSS_DIR "include/SDL3_shadercross") -Destination (Join-Path "$SDL_SHADERCROSS_BINDINGS_DIR" "include")
 
 Set-Location $PROJECT_DIR
