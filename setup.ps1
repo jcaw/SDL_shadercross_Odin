@@ -7,9 +7,6 @@ $BUILD_MODE = if ($d) { "Debug" } else { "Release" }
 
 $OS = "windows"
 $env:CMAKE_GENERATOR = "Ninja"
-$env:CMAKE_GENERATOR_PLATFORM = "x64"
-$env:CMAKE_C_COMPILER = "cl.exe"
-$env:CMAKE_CXX_COMPILER = "cl.exe"
 $PROJECT_DIR = Get-Location
 $BINS_DIR = Join-Path(Join-Path (Join-Path $PROJECT_DIR "bins") $OS) $BUILD_MODE
 
